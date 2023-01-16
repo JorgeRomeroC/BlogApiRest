@@ -10,9 +10,9 @@ def user_directory_path(instance, filename):
 
 class Post(models.Model):
 
-    class PostObjects(models.Model):
+    class PostObjects(models.Manager):
         def get_queryset(self):
-            return super().get_queryset() .filter(status='published')
+            return super().get_queryset().filter(status='published')
 
     options = (
         ('draft', 'Draft'),

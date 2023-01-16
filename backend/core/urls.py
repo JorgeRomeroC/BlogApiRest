@@ -5,7 +5,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #al trabajar con rest-framework y queremos hacer auntenticacion llamamos
+    path('blog/', include('blog.urls', namespace="blog")),
     path('api-auth/', include('rest_framework.urls'))
 ]
 #==========================================
