@@ -7,13 +7,13 @@
         <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
           <div v-for="posts in APIData" :key="posts.id" class="group relative">
             <div class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-              <!--<img :src="callout.imageSrc" :alt="callout.imageAlt" class="h-full w-full object-cover object-center" />-->
+              <img :src="{{ posts.thumbnail}}"  class="h-full w-full object-cover object-center" />
             </div>
             <h3 class="mt-6 text-sm text-gray-500">
-              <a>
+              <router-link :to="{name:'BlogPost', params:{id:posts.id, title: posts.title, thumbnail: posts.thumbnail, slug: posts.slug, excerpt: posts.excerpt, content: posts.content}}">
                 <span class="absolute inset-0" />
                 {{ posts.title }}
-              </a>
+              </router-link>
             </h3>
             <p class="text-base font-semibold text-gray-900">{{ posts.content }}</p>
           </div>

@@ -17,6 +17,11 @@ const routes = [
     name: 'Blog',
     component: () => import('../views/Blog.vue')
   },
+  {
+    path: '/blog/:slug',
+    name: 'BlogPost',
+    component: () => import('../views/PostDetail.vue')
+  },
 ]
 
 const router = createRouter({
